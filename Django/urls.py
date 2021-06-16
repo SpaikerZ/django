@@ -6,5 +6,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('postik/', include('Postik.urls')),
     #path('', include("createPost.urls")) see settings.py
 ]

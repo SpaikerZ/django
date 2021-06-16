@@ -22,8 +22,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     #'createPost', OMG... old app which I hate. I put this commit him because this is a history.I want to save my suffering here
-
+    
+    'Postik',
+    
 ]
 
 MIDDLEWARE = [
