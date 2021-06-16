@@ -8,7 +8,7 @@
 {% block body %}
     <h2>Create Posts</h2>
 
-    <form id="form_create_post" method="post" >
+    <form id="form_create_post" method="post" action="Postik/">
         {% csrf_token %}
 
         <p>Name of post: </p>
@@ -17,7 +17,7 @@
         <input type="text" name="TextPost" maxlength="2000">
         <p>ConfirmId(needed for changing or removing): </p>
         <input type="text" name="ConfirmId" maxlength="15">
-        <input type="button" value="Add">
+        <input type="submit" value="Add">
 
     </form>
 
