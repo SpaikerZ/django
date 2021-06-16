@@ -11,6 +11,7 @@ urlpatterns = [
     path('see_posts/', views.see ),
     path('change_post/', views.change ),
     path('remove_post/', views.remove ),
+    
     #path('postik/', include('Postik.urls')),
     #path('', include("createPost.urls")) see settings.py
 ]
