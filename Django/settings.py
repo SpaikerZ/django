@@ -22,7 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'createPost',
+    #'createPost', OMG... old app which I hate. I put this commit him because this is a history.I want to save my suffering here
+
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Django.wsgi.application'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
+
 
 DATABASES = {
     'default': {
@@ -99,6 +102,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
