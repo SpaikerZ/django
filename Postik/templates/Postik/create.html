@@ -1,1 +1,30 @@
 {% extends 'Postik/wrapper.html' %}
+
+{% block title %}
+    Creating Posts
+{% endblock %}
+
+
+{% block body %}
+    <h2>Create Posts</h2>
+
+    <form id="form_create_post" method="post" >
+        {% csrf_token %}
+
+        <p>Name of post: </p>
+        <input type="text" name="NamePost" maxlength="100">
+        <p>Text of post: </p>
+        <input type="text" name="TextPost" maxlength="2000">
+        <p>ConfirmId(needed for changing or removing): </p>
+        <input type="text" name="ConfirmId" maxlength="15">
+        <input type="button" value="Add">
+
+    </form>
+
+    
+    <p><a href="see_posts"><input type="button" value="See Posts"></a></p>
+    <p><a href="change_post"><input type="button" value="Change Posts"></a></p>
+    <p><a href="remove_post"><input type="button" value="Remove Posts"></a></p>
+
+
+{% endblock %}
