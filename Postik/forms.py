@@ -17,7 +17,7 @@ class inputidform(forms.ModelForm):
 
     
     class Meta:
-
+        ConfirmId = forms.CharField(max_length = 15)
         fields = ('ConfirmId',)
         model = postmodel
 

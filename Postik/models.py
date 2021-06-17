@@ -11,3 +11,5 @@ class postmodel(models.Model):
 
     def __str__(self):
         return self.ConfirmId
+        return self.NamePost
+        return self.TextPost

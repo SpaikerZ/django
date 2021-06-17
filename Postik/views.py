@@ -50,24 +50,15 @@ def change(request):
     
     if request.method == 'POST':
         form = inputidform(request.POST)
-        #conf = postmodel.objects.get(form,)        
+        e = list(form)
 
-        e = postmodel.objects.all()
-
-        if form in postmodel.ConfirmId :
+        if postmodel.objects.all().exists(form.ConfirmId) == True:
             
-            idpost = postmodel.objects.order_by(ConfirmId)
-            
-            #task = form.save(commit=False)
-            #task.save()
+            idpost = postmodel.objects.order_by('ConfirmId')
+    
             return render(request, 'Postik/change.html', {'idpost':idpost})
             
-            #allPosts = postmodel.objects.all()
-            #return render(request, 'Postik/see.html', {'allPosts':allPosts})
         
-        #elif #form.is_valid() == False:
-            #return HttpResponse("<h1>Form not valid </h1><h2>Or something was wrong</h2>")
-
         else:
             return HttpResponse("<h1>Form not valid </h1><h2>Or ConfirmId uncorrectly</h2>")
     
