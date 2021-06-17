@@ -1,2 +1,16 @@
 {% extends 'Postik/wrapper.html' %}
 
+
+
+{% block body %}
+{% load bootstrap3 %}
+<form method="POST">
+    <div class="bg-info">
+        <p><h3>Write Id to confirm Post: </h3></p>
+        <p><input type="text" maxlength="15" placeholder="ConfirmId" id="InputId"></p>
+
+        <p><input type="submit" value="next"></p>
+
+    </div>
+</form>
+{% endblock %}

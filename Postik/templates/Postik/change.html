@@ -1,1 +1,13 @@
 {% extends 'Postik/wrapper.html' %}
+
+
+{% block body %}
+    
+    {% for i in idpost %}
+        
+        <h1>{{i.NamePost}}</h1>
+        <h1>{{i.TextPost}}</h1>
+        <h1>{{i.ConfirmId}}</h1>
+
+    {% endfor %}
+{% endblock %}

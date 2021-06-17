@@ -7,10 +7,13 @@
 
         
         {% for i in allPosts %}
-        <p>
-            <h3>{{ i.NamePost }}</h3>
-            <h3>{{ i.TextPost }}</h3>
-        </p>
+        <div class='bg-success'>
+            <p>
+                <h3 class="text-dark">{{ i.NamePost }}</h3>
+                <h4 class="text-info">{{ i.TextPost }}</h4>
+            </p>
+        
+        </div>
         {% endfor %}
 
     

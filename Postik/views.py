@@ -44,11 +44,34 @@ def see(request):
 
 
 
-
-
-
 def change(request):
     return render(request, 'Postik/change.html')
+    
+    if request.method == 'POST':
+        form = inputidform(request.POST)
+
+        if form.ConfirmId in postmodel.ConfirmId :
+            
+            idpost = postmodel.objects.order_by('ConfirmId')[InputId]
+            
+            #task = form.save(commit=False)
+            #task.save()
+            return render(request, 'Postik/change.html', {'idpost':idpost})
+            
+            #allPosts = postmodel.objects.all()
+            #return render(request, 'Postik/see.html', {'allPosts':allPosts})
+        
+        #elif #form.is_valid() == False:
+            #return HttpResponse("<h1>Form not valid </h1><h2>Or something was wrong</h2>")
+
+        else:
+            return HttpResponse("<h1>Form not valid </h1><h2>Or ConfirmId uncorrectly</h2>")
+    
+    
+    return render(request, 'Postik/change.html')
+
+
+
 
 def remove(request):
     return render(request, 'Postik/remove.html')
