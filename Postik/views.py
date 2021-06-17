@@ -28,20 +28,14 @@ def create(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 def see(request):
-    return render(request, 'Postik/see.html')
+    allPosts = postmodel.objects.all()
+    return render(request, 'Postik/see.html', {'allPosts':allPosts})
+
+
+
+
+
 
 def change(request):
     return render(request, 'Postik/change.html')
