@@ -2,7 +2,7 @@
 
 {% block body %}
     <h2>Posts(
-            
+            {{ allPostsLen }}
         )</h2>
         {% for i in allPosts %}
         <p>
@@ -10,4 +10,6 @@
             <h3>{{ i.TextPost }}</h3>
         </p>
         {% endfor %}
+
+    
 {% endblock %}

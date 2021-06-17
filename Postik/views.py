@@ -17,19 +17,24 @@ def create(request):
             task = form.save(commit=False)
             task.save()
 
-            return render(request, 'Postik/index.html')
+            allPosts = postmodel.objects.all()
+            return render(request, 'Postik/see.html', {'allPosts':allPosts})
         
+        elif form.is_valid() == False:
+            return HttpResponse("<h1>Form not valid </h1><h2>Or something was wrong</h2>")
+
         else:
             return HttpResponse("<h1>Form not valid </h1><h2>Or something was wrong</h2>")
     
-    else:
-        return render(request, 'Postik/create.html')
+    
+    return render(request, 'Postik/create.html')
 
 
 
 
 def see(request):
     allPosts = postmodel.objects.all()
+    allPostsLen = len(allPosts)
     return render(request, 'Postik/see.html', {'allPosts':allPosts})
 
 

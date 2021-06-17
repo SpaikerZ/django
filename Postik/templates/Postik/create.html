@@ -7,8 +7,11 @@
 
 {% block body %}
     <h2>Create Posts</h2>
-
-    <form method="post" action="/postik/">
+    <!--
+        action="/postik/"  it was my bad - big problem and time I lose when write this here, because in views.py 
+        i solve it, Why I write again ?
+    -->
+    <form method="POST" >
         {% csrf_token %}
 
         <p>Name of post: </p>
