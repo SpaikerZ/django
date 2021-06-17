@@ -34,7 +34,12 @@ def create(request):
 
 def see(request):
     allPosts = postmodel.objects.all()
-    allPostsLen = len(allPosts)
+    
+    a = 0
+    for i in allPosts:
+        a += 1
+    allPostsLen = a
+    
     return render(request, 'Postik/see.html', {'allPosts':allPosts})
 
 
