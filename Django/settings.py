@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     #'createPost', OMG... old app which I hate. I put this commit him because this is a history.I want to save my suffering here
     
     'Postik',
+    'Users',
     'bootstrap3',
     
 ]
