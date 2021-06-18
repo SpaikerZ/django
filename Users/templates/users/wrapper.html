@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock %}
+    {% load bootstrap3 %}
+        <script src="{% bootstrap_jquery_url %}"></script>
+        {% bootstrap_javascript %}
+        {% bootstrap_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Document
+        {% endblock %}
+    </title>
+
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+</body>
+</html>
