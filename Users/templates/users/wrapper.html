@@ -18,9 +18,45 @@
 
 </head>
 <body>
-    {% block body %}
+    {% block header %}
+    <div class="breadcrumbs" id="breadcrumbs">
+        <!-- breadcrumb --><ol class="breadcrumb">
+        <li><a href="https://bootstraptema.ru/"><span>Главная</span></a></li>
+        <li><a href="/stuff/templates_bootstrap/1"><span>Шаблоны Bootstrap</span></a></li>
+        <li><a href="/stuff/templates_bootstrap/shop/7"><span>Магазин</span></a></li>
+        <li class="active">Diana</li>
+        <li><span class="input-icon">
+            <input type="text" name="q" placeholder="Ищем..." class="nav-search-input queryField" 
+            id="nav-search-input" autocomplete="off"></li>
+    </ol>
+        
+        </div>
     {% endblock %}
+   
 
+
+    <div class="container-fluid">
+        <div class="row row-no-gutters">
+            <div class="col-lg-4 bg-info" >
+                right
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                    {% block body %}
+                    {% endblock %}
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 bg-info">
+                left
+            </div>
+            
+        </div>
+      </div>
+    
     {% block footer %}
     {% endblock %}
 </body>
