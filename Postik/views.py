@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import postform, inputidform
-from .models import postmodel
+from .forms import *
+from .models import *
 
 # Create your views here.
 
@@ -48,25 +48,23 @@ def see(request):
 
 def change(request):
     
+
     if request.method == 'POST':
         form = inputidform(request.POST)
-        e = list(form)
 
-        if postmodel.objects.all().exists(form.ConfirmId) == True:
-            
-            idpost = postmodel.objects.order_by('ConfirmId')
-    
-            return render(request, 'Postik/change.html', {'idpost':idpost})
-            
-        
+        if form.is_valid():
+            task = form.save(commit=False)
+            task.save()
+            conf = confirmmodel.ConfirmId 
+            if conf in postmodel.ConfirmId:
+                return HttpResponse("<h1>Succes</h1>")
+            else:
+                return HttpResponse("<h1>Form is only save</h1>")
         else:
-            return HttpResponse("<h1>Form not valid </h1><h2>Or ConfirmId uncorrectly</h2>")
-    
-    
-    return render(request, 'Postik/confirm.html')
+            return HttpResponse("<h1>Form not valid</h1>")
 
-
-
+    else:
+        return render(request, 'Postik/confirm.html')
 
 def remove(request):
     return render(request, 'Postik/remove.html')

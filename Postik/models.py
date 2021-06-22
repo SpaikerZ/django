@@ -13,3 +13,9 @@ class postmodel(models.Model):
         return self.ConfirmId
         return self.NamePost
         return self.TextPost
+
+class confirmmodel(models.Model):
+    ConfirmId = models.CharField(max_length = 15)
+
+    def __str__(self):
+        return self.ConfirmId

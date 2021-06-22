@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import *
-
+from .models import *
 
 
 def register(request):
@@ -21,3 +21,20 @@ def register(request):
 
 def index(request):
     return render(request, 'users/index.html')
+
+
+def example(request):
+    b_model = blogmodel.objects.all()
+    uno_model = blogmodel(blogname='Anton')
+
+    dos_model = blogmodel.objects.get(blogname='Egor')
+    
+
+
+    a = {
+        'b_model': b_model,
+        'uno_model' : uno_model,
+        'dos_model': dos_model,
+    }
+
+    return render(request, 'users/all.html', a)

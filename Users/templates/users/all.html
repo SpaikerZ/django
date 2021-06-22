@@ -1,0 +1,17 @@
+{% extends 'users/wrapper.html' %}
+
+{% block body %}
+    {% for f in b_model %}
+       <p> {{f.blogname}} </p>
+       <p> {{f.blogname2}} </p>
+    {% endfor %}
+
+    <h3>Uno model is:</h3>    
+    
+        <p>{{uno_model.blogname}}</p>
+        <p>{{uno_model.blogname2}}</p>
+    <h3>Dos model is:    </h3>
+        <p>{{dos_model.blogname}}</p>
+        <p>{{dos_model.blogname2}}</p>
+
+{% endblock %}
