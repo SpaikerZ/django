@@ -3,5 +3,31 @@
 {% block body %}
 <h2>
     register 
+    <form method="POST" class="form">
+        {% csrf_token %}
+
+        
+        <p>Username: </p>
+        <input type="text" name="username" maxlength="64">
+        <p>Usermail: </p>
+        <input type="text" name="usermail" maxlength="254">
+        
+        <p>Password : </p>
+        <input type="password" name="userpassword1" maxlength="254">
+        <p>Repeat Password : </p>
+        <input type="password" name="userpassword2" maxlength="254">
+        
+
+
+        <p>
+          <div>
+            <input type="submit" value="Add">
+          </div>
+        </p>
+
+        
+    </form>
+
+
 </h2>
 {% endblock %}

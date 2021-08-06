@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .forms import *
 from .models import *
 
+from django.contrib.auth.models import *
+from django.contrib.auth.models import User
+
 
 
 
@@ -11,15 +14,20 @@ def register(request):
         user_form = usersmodelregisterform(request.POST)
 
         if user_form.is_valid():
-            newuser = user_form.save(commit=False)
+            new_user = user_form.save(commit=False)
 
-            new_user.set_password(user_form.cleaned_data['password1'])
+            u = User.objects.get(username = new_user.username)
+            u.set_password()
+            u.save()
+            
+            new_user.set_password(user_form.cleaned_data['userpassword1'])
             
             new_user.save()
             return render(request, 'users/register_done.html', {'new_user': new_user})
     else:
-        user_form = usersmodelregisterform()
-    return render(request, 'users/register.html', {'user_form': user_form})
+        user_form = usersmodelregisterform(request.POST)
+        return render(request, 'users/register.html', {'user_form': user_form})
+
 
 def index(request):
     return render(request, 'users/index.html')
