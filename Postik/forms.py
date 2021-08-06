@@ -13,10 +13,8 @@ class postform(forms.ModelForm):
 
 
 class inputidform(forms.ModelForm):
-
     ConfirmId = forms.CharField( max_length = 15)
 
-    
     class Meta:
         
         fields = ('ConfirmId',)
