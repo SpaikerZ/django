@@ -7,7 +7,7 @@ class postform(forms.ModelForm):
 
     class Meta:
 
-        fields = ('NamePost', 'TextPost', 'ConfirmId' )
+        fields = ('NamePost', 'TextPost', 'ConfirmId' , 'DatePost')
         model = postmodel
 
 
