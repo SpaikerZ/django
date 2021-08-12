@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import *
 from .models import *
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 
 
 
@@ -51,7 +51,19 @@ class SeeListView(ListView):
     model = postmodel
     template_name = 'Postik/see.html'
     context_object_name = 'allPosts'
+"""
+class DetailListView(DetailView):
+    model = postmodel
+    template_name = 'Postik/detail.html'
+    context_object_name = 'Detail'
+"""
+def DetailViewDef(request, id):
+    CurrentPost = postmodel.objects.filter(id=id)
 
+    current_post_list = {
+        'CurrentPost': CurrentPost,
+    }
+    return render(request, 'Postik/detail.html', current_post_list)
 
 def change(request):
     return HttpResponse('<h1>This `{}` </h1>'.format(postmodel.objects.all()))

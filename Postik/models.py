@@ -5,6 +5,7 @@ from datetime import datetime
 
 # Create your models here.
 class postmodel(models.Model):
+    id = models.AutoField(primary_key=True)
     NamePost = models.CharField(max_length = 100)
     TextPost = models.CharField(max_length = 2000)
     ConfirmId = models.CharField(max_length = 15)

@@ -1,0 +1,18 @@
+{% extends 'Postik/wrapper.html' %}
+
+{% block body %}
+        
+        {% for i in CurrentPost %}
+        <div class='bg-success'>
+            <p>
+                <h1 class="text-dark">{{ i.NamePost }}</h1>
+                <h2 class="text-info">{{ i.TextPost }}</h2>
+                <h3>{{ i.DatePost }}</h3>
+                <h2 class="text-succes"><a href="/"><button>Назад</button></a></h2>
+            </p>
+        
+        </div>
+        {% endfor %}
+
+    
+{% endblock %}

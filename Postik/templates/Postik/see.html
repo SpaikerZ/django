@@ -2,7 +2,7 @@
 
 {% block body %}
     <h2>Posts(
-            {{ allPosts.countPosts }}
+            {{ countPosts }}
         )</h2>
 
         
@@ -12,7 +12,7 @@
                 <h3 class="text-dark">{{ i.NamePost }}</h3>
                 <h4 class="text-info">{{ i.TextPost | truncatechars:"20" }}</h4>
                 <h4>{{ i.DatePost }}</h4>
-                <h4 class="text-succes"><a href="detail/"><button>Подробнее</button></a></h4>
+                <h4 class="text-succes"><a href="detail/{{i.id}}"><button>Подробнее</button></a></h4>
             </p>
         
         </div>
