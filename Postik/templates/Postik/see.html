@@ -2,11 +2,11 @@
 
 {% block body %}
     <h2>Posts(
-            {{ countPosts }}
+            {{ allPosts.countPosts }}
         )</h2>
 
         
-        {% for i in allPosts %}
+        {% for i in allPosts%}
         <div class='bg-success'>
             <p>
                 <h3 class="text-dark">{{ i.NamePost }}</h3>

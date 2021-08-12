@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import *
 from .models import *
+from django.views.generic import ListView
+
+
 
 # Create your views here.
 
@@ -30,7 +33,7 @@ def create(request):
 
 
 
-
+"""
 def see(request):
     allPosts = postmodel.objects.all()
     countPosts = len(list(allPosts))
@@ -42,7 +45,12 @@ def see(request):
     }
 
     return render(request, 'Postik/see.html', allPostslist)
+"""
 
+class SeeListView(ListView):
+    model = postmodel
+    template_name = 'Postik/see.html'
+    context_object_name = 'allPosts'
 
 
 def change(request):

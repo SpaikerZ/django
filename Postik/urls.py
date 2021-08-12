@@ -8,7 +8,10 @@ from . import views
 urlpatterns = [
     path('', views.index ),
     path('create_post/', views.create ),
-    path('see_posts/', views.see ),
+    #path('see_posts/', views.see ),
+
+    path('see_posts/', views.SeeListView.as_view()),
+
     path('change_post/', views.change ),
     path('remove_post/', views.remove ),
     
