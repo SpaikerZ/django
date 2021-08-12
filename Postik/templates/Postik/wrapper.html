@@ -21,15 +21,25 @@
     {% block header %}
     <div class="breadcrumbs" id="breadcrumbs">
         <!-- breadcrumb --><ol class="breadcrumb">
-        <li><a href="https://bootstraptema.ru/"><span>Главная</span></a></li>
-        <li><a href="/stuff/templates_bootstrap/1"><span>Шаблоны Bootstrap</span></a></li>
-        <li><a href="/stuff/templates_bootstrap/shop/7"><span>Магазин</span></a></li>
-        <li class="active">Startapp</li>
+        <li><a href="/"><span>Главная</span></a></li>
+        <li><a href="#"><span>Шаблоны Bootstrap</span></a></li>
+        <li><a href="#"><span>Магазин</span></a></li>
+        <li><a href="#"><span>Startapp</span></a></li>
+
         <li><span class="input-icon">
             <input type="text" name="q" placeholder="Ищем..." class="nav-search-input queryField" 
             id="nav-search-input" autocomplete="off"></li>
     </ol>
-        
+                {% url 'creating' as creating_url %}
+                <li><a class="nav-link {%if creating_url == request.path %} disabled {% endif %} " href="{{ creating_url }}"><span>Creating</span></a></li>
+
+
+                <li><a href="see_posts"><span>Posts</span> </a></li>
+                <li><a href="change_post"><span>Changing</span></a></li>
+                <li><a href="remove_post"><span>Removing</span></a></li>
+
+
+
         </div>
     {% endblock %}
    
